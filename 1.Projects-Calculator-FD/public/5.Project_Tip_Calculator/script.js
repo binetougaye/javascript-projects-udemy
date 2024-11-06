@@ -3,7 +3,10 @@ function calculateTip() {
     // get the input type values
     const billAmount = parseFloat(document.getElementById("bill-amount").value)
     const tipPercentage = parseFloat(document.getElementById("tip-percentage").value)
-
+    if (isNaN(billAmount) || isNaN(tipPercentage)) {
+        alert("Veuillez remplir tous les champs");
+        return;
+    }
     // Calculate the Tip and Total Amount
     const tipAmount = billAmount * (tipPercentage / 100)
     const totalAmount = tipAmount + billAmount
